@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:soundfree/app/theme/colors.dart';
 import 'package:soundfree/core/components/soundfree_button.dart';
+import 'package:soundfree/features/onboarding/controllers/start_app_button_controller.dart';
+import 'package:soundfree/features/onboarding/controllers/github_button_controller.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -45,14 +47,16 @@ class OnBoardingScreen extends StatelessWidget {
                           child: SoundFreeButton(
                             text: 'Empezar a escuchar',
                             iconData: MdiIcons.music,
-                            onPressed: () {},
+                            onPressed: () =>
+                                StartAppButtonController().startApp(context),
                           ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
                           child: SoundFreeButton(
                             text: 'Apoyar al creador',
-                            onPressed: () {},
+                            onPressed: () =>
+                                GitHubButtonController().openGithubRepo(),
                             iconData: MdiIcons.github,
                           ),
                         ),
